@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async-odyssey</title>
+  </head>
+  <body>
+    <header>
+      <h1>async-odyssey</h1>
+
+      <form id="search-form">
+        <label for="query">Buscar en el archivo de la NASA</label>
+        <input type="search" id = "query" value="apollo" placeholder="apollo, mars,...">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div id="presets">
+        <button type="button" data-q="apollo">Apolo</button>
+        <button type="button" data-q="mars">Mars</button>
+        <button type="button" data-q="hubble">Hubble</button>
+        <button type="button" data-q="artemis">Artemis</button>
+      </div>
+    </header>
+
+    <main>
+      <p id="status" role="status"></p>
+      <p id="stats" hidden></p>
+      <section id="results" aria-label="Resultados"></section>
+    </main>
+
+    <footer>
+      <span>Datos de la NASA con fotos y videos documentados</span>
+      <button type="button" id="clear-cache">Vaciar la cache</button>
+    </footer>
+
+    <script type="module" src="/async-odyssey/src/main.js"></script>
+  </body>
+</html>
