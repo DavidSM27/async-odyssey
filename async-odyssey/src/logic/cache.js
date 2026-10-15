@@ -22,5 +22,9 @@ export function guardarCache(clave, datos){
 }
 
 export function vaciarCache(){
-    localStorage.clear();
+    for(const clave of Object.keys(localStorage)){
+        if(clave.startsWith("nasa:")){
+            localStorage.removeItem(clave);
+        }
+    }
 }

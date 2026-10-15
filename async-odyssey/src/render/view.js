@@ -25,9 +25,9 @@ export function mostrarError(mensaje, reintentar){
     estado.textContent = mensaje;
 
     const boton = document.createElement("button");
-    botton.type = "button";
-    botton.textContent = "Reintentar";
-    botton.addEventListener("click", reintentar);
+    boton.type = "button";
+    boton.textContent = "Reintentar";
+    boton.addEventListener("click", reintentar);
     estado.appendChild(boton);
 }
 
@@ -36,7 +36,7 @@ export function mostrarResultados(imagenes, conteoPorDecada){
     estado.textContent = `Mostrando ${imagenes.length} resultados.`;
 
     resumen.textContent = Object.entries(conteoPorDecada)
-        .toSorted(([A], [B]) => A[0].localeCompare(B[0]))
+        .toSorted(([a], [b]) => a.localeCompare(b))
         .map(([decada, n]) => `${decada}: ${n}`)
         .join(" - ");
     resumen.hidden = resumen.textContent === "";

@@ -3,7 +3,7 @@
 const URL_BASE = "https://images-api.nasa.gov/search";
 
 export async function buscarImagenes(consulta){
-    const url = `${URL_BASE}?q=${consulta}`;
+    const url = `${URL_BASE}?q=${encodeURIComponent(consulta)}&media_type=image`;
 
     const respuesta = await fetch(url);
 
@@ -12,5 +12,5 @@ export async function buscarImagenes(consulta){
     }
 
     const datos = await respuesta.json();
-    return datos;
+    return datos.collection?.items ?? []; // si no tenemos ningun item se devuelve un array vacio para no tener que hacer comprobaciones en el resto del codigo 
 }
